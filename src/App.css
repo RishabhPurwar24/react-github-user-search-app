@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Space Mono", monospace;
 }
 
 :root {
@@ -20,9 +21,96 @@
 
 body {
   background-color: var(--off-black);
-  font-family: "Space Mono", monospace;
+
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin: 10px;
+  width: 580px;
+}
+
+/* ---------- HEADING ----------- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .heading {
   color: #ffffff;
 }
+
+.toggle-button {
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+}
+
+.light-button {
+  padding: 6px;
+}
+
+.sun {
+  fill: var(--white);
+  vertical-align: bottom;
+  margin: 3px;
+}
+
+/* ---------- HEADING ----------- */
+
+/* ------------INPUT-------------- */
+
+.search-container {
+  background-color: #1e2b48;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  margin: 18px 0px;
+}
+
+.search-icon {
+  vertical-align: middle;
+}
+
+.input-search {
+  color: var(--white);
+  background-color: #1e2b48;
+  padding: 5px 12px;
+  border: 2px solid transparent;
+  font-size: 18px;
+  line-height: 25px;
+  margin-left: 24px;
+  width: 75%;
+  padding-right: 20px;
+}
+
+.input-search::placeholder {
+  color: var(--white);
+}
+
+.search-button {
+  color: var(--white);
+  background-color: var(--blue);
+  font-size: 16px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* ------------INPUT-------------- */
+
+/* ------------CARD---------------- */
+.card-image-container {
+  width: 580px;
+  color: var(--white);
+}
+
+/* ------------CARD---------------- */
