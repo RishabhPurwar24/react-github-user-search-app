@@ -25,7 +25,7 @@ const Search = (props) => {
 
   return (
     <div className="search-container">
-      <div>
+      <div className="input-container">
         <img
           className="search-icon"
           src="https://github-user-search-iliwili.netlify.app/static/media/icon-search.0cc0c984.svg"
