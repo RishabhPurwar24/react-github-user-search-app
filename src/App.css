@@ -121,6 +121,17 @@ body {
   color: var(--white);
   background-color: #1e2b48;
   display: flex;
+  justify-content: space-around;
+  padding: 45px;
+  border-radius: 10px;
+}
+
+.card-content-container {
+  width: 487px;
+}
+
+.card-image-container {
+  margin-right: 36px;
 }
 
 .card-image-container img {
@@ -131,15 +142,68 @@ body {
 
 .card-header {
   display: flex;
-  flex-direction: column;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-header a {
   color: #07f;
 }
 
+.card-content-header p {
+  margin: 20px 0 32px 0;
+}
+
 li {
   list-style: none;
+}
+
+.card-info-container-1 {
+  background-color: #141d2f;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 16px 32px;
+  border-radius: 10px;
+  width: auto;
+}
+
+.info-container-1 {
+  font-size: 25px;
+}
+
+.card-info-container-2 {
+  margin-top: 24px;
+  width: auto;
+}
+
+.location-blog {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.twitter-company {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location-blog li span {
+  margin-right: 14px;
+}
+
+.twitter-company li span {
+  margin-right: 14px;
+}
+
+.blog-li a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.company-li {
+  margin-right: 112px;
 }
 
 /* ------------CARD---------------- */
