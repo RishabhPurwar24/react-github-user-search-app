@@ -7,8 +7,11 @@
 
 :root {
   --blue: #0079ff;
-  --white: #ffffff;
-  --off-black: #141d2f;
+  --background-primary: #141d2f;
+  --background-secondary: #1e2b48;
+  --text-primary: #ffffff;
+  --text-secondary: grey;
+  /* --off-black: #141d2f;
   --off-blue: #1e2a47;
   --button-hover: #90a4d4;
   --gray: #697c9a;
@@ -16,19 +19,34 @@
   --light-black: #2b3442;
   --white-gray: #f6f8ff;
   --off-white: #fefefe;
-  --light-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.19);
+  --light-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.19); */
 }
 
-body {
-  background-color: var(--off-black);
+/*------------- DARK THEME ------------*/
 
+/* When it’s dark, the CSS[data-theme='light'] section overrides the variables we defined in the :root, so any styling which relies on those variables is toggled as well. */
+
+[data-theme="light"] {
+  --background-primary: #f6f8ff;
+  --background-secondary: #ffffff;
+  --text-primary: #222731;
+  --text-secondary: #4b6a9b;
+  --button-background: #0079ff;
+}
+
+/*------------- DARK THEME ------------*/
+
+body {
+  background-color: var(--background-primary);
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
-  margin: 10px;
   width: 730px;
+  padding: 0 10px;
 }
 
 /* ---------- HEADING ----------- */
@@ -36,15 +54,16 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
+  /* width: 100%; */
 }
 
 .heading {
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .toggle-button {
   background-color: transparent;
-  color: var(--white);
+  color: var(--text-primary);
   border: none;
   font-weight: 700;
   text-transform: uppercase;
@@ -57,7 +76,7 @@ body {
 }
 
 .sun {
-  fill: var(--white);
+  fill: var(--text-primary);
   vertical-align: bottom;
   margin: 3px;
 }
@@ -67,17 +86,18 @@ body {
 /* ------------INPUT-------------- */
 
 .search-container {
-  background-color: #1e2b48;
+  background-color: var(--background-secondary);
   padding: 0.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
   margin: 18px 0px;
+  /* width: 100%; */
 }
 
 .input-container {
-  flex: 4;
+  width: 80%;
 }
 
 .search-icon {
@@ -85,8 +105,8 @@ body {
 }
 
 .input-search {
-  color: var(--white);
-  background-color: #1e2b48;
+  color: var(--text-primary);
+  background-color: var(--background-secondary);
   padding: 5px 12px;
   border: 2px solid transparent;
   font-size: 18px;
@@ -98,17 +118,16 @@ body {
 }
 
 .input-search::placeholder {
-  color: var(--white);
+  color: var(--text-primary);
 }
 
 .search-button {
-  color: var(--white);
+  color: var(--text-primary);
   background-color: var(--blue);
   font-size: 16px;
-  padding: 8px 2px;
+  padding: 8px 8px;
   border: none;
   border-radius: 10px;
-  flex: 1;
   cursor: pointer;
 }
 
@@ -117,21 +136,19 @@ body {
 /* ------------CARD---------------- */
 
 .card-container {
-  width: 730px;
-  color: var(--white);
-  background-color: #1e2b48;
+  width: 100%;
+  color: var(--text-primary);
+  background-color: var(--background-secondary);
   display: flex;
   justify-content: space-around;
-  padding: 45px;
+  padding: 45px 0;
   border-radius: 10px;
 }
 
-.card-content-container {
-  width: 487px;
-}
-
 .card-image-container {
-  margin-right: 36px;
+  text-align: center;
+  margin-right: 12px;
+  margin-left: 12px;
 }
 
 .card-image-container img {
@@ -140,9 +157,12 @@ body {
   height: 117px;
 }
 
-.card-header {
-  display: flex;
+.card-content-container {
+  width: 80%;
+  margin-right: 12px;
+}
 
+.card-header {
   display: flex;
   justify-content: space-between;
 }
@@ -160,13 +180,12 @@ li {
 }
 
 .card-info-container-1 {
-  background-color: #141d2f;
+  background-color: var(--background-primary);
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
   padding: 16px 32px;
   border-radius: 10px;
-  width: auto;
 }
 
 .info-container-1 {
@@ -174,6 +193,88 @@ li {
 }
 
 .card-info-container-2 {
+  margin-top: 24px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.location-blog {
+  width: 50%;
+}
+
+.location-blog p {
+  margin-bottom: 5px;
+}
+
+.location-blog-span-1 {
+  margin-right: 21px;
+}
+
+.location-blog-span-2 {
+  margin-right: 16px;
+}
+
+.location-blog p a {
+  color: var(--text-primary);
+  text-decoration: none;
+  /* word-wrap: break-word; */
+}
+
+.twitter-company p {
+  margin-bottom: 5px;
+}
+
+.twitter-company p span {
+  margin-right: 16px;
+}
+
+.twitter-company p a {
+  color: var(--text-primary);
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .card-container {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+
+  .card-image-container img {
+    text-align: center;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-content-container {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .card-content-header p {
+    margin: 10px 0;
+  }
+
+  .card-info-container-1 {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .location-blog {
+    margin-right: 8px;
+  }
+}
+
+/* .card-info-container-2 {
   margin-top: 24px;
   width: auto;
 }
@@ -204,6 +305,6 @@ li {
 
 .company-li {
   margin-right: 112px;
-}
+} */
 
 /* ------------CARD---------------- */
