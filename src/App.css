@@ -309,6 +309,10 @@ li {
   .card-info-container-1 {
     margin-top: 20px;
   }
+
+  .card-date {
+    margin-left: -22px;
+  }
 }
 
 @media (max-width: 400px) {
