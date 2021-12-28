@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const Search = (props) => {
+const Search = ({ resultData }) => {
   const [query, setQuery] = useState("");
   const [text, setText] = useState("");
   const [data, setData] = useState({});
@@ -9,7 +9,7 @@ const Search = (props) => {
   const searchHandler = () => {
     console.log("Inside Search");
     setQuery(text);
-    props.resultData(data);
+    resultData(data);
   };
 
   useEffect(() => {
@@ -18,10 +18,10 @@ const Search = (props) => {
         `https://api.github.com/users/${query ? query : "octocat"}`
       );
       setData(result.data);
-      props.resultData(result.data);
+      resultData(result.data);
     };
     fetchData();
-  }, [query]);
+  }, [query, resultData]);
 
   return (
     <div className="search-container">

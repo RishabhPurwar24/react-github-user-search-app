@@ -18,6 +18,7 @@ const Card = ({ userData }) => {
               <a
                 href={`https://github.com/${userData.login}`}
                 target={"_blank"}
+                rel="noreferrer noopener"
               >
                 @{userData.login}
               </a>
@@ -80,7 +81,11 @@ const Card = ({ userData }) => {
               </span>
 
               {userData.blog ? (
-                <a href={`${userData.blog}`} target="_blank">
+                <a
+                  href={`${userData.blog}`}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   External Link
                 </a>
               ) : (
@@ -101,6 +106,7 @@ const Card = ({ userData }) => {
                 <a
                   href={`https://twitter.com/${userData.twitter_username}`}
                   target="_blank"
+                  rel="noreferrer noopener"
                 >
                   @{userData.twitter_username}
                 </a>
